@@ -15,9 +15,13 @@ jobs:
         with:
           node-version: '16'
 
-      - name: setup python and CML and DVC         
+      - name: setup python         
       - uses: actions/setup-python@v4
+
+      - name: setup CML 
       - uses: iterative/setup-cml@v1
+      
+      - name: setup DVC 
       - uses: iterative/setup-dvc@v1
 
 
