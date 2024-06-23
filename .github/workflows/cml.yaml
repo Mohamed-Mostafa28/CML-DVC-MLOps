@@ -1,8 +1,10 @@
 name: CML
 on: [push]
+permissions: write-all
 jobs:
   train-and-report:
     runs-on: ubuntu-latest
+
     # container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
       - name: setup env
@@ -12,7 +14,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          
+
       - name: setup python and CML and DVC         
       - uses: actions/setup-python@v4
       - uses: iterative/setup-cml@v1
