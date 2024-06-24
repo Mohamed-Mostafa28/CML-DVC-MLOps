@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: '16'
 
-      # - name: setup CML 
-      #   uses: iterative/setup-cml@v1
+      - name: setup CML 
+        uses: iterative/setup-cml@v1
       
       
       - name: setup DVC 
@@ -47,17 +47,27 @@ jobs:
           ls
           echo "pull done"
 
-      - name: run experiment
+      - name: run experiment1
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          
-          ls
-          
-          python exp_run.py
-
+        run: |        
+          ls  
+          python exp1.py
           echo "exp_run done"
-      
+          ls
+          echo "#####################################""
+
+
+        - name: run experiment2
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |          
+          ls
+          python exp2.py
+          echo "exp_run done"
+          ls
+          echo "#####################################""
+
       # - name: Create report
       #   env:
       #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
