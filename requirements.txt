@@ -4,4 +4,4 @@ seaborn
 scikit-learn
 scipy
 statsmodels
-yaml==6.0.1
+pyyaml
