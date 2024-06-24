@@ -76,10 +76,18 @@ def save_image(data, labels, model_name, model_params, file_path):
     fig.tight_layout(rect=[0, 0.1, 1, 0.95])  # Adjust layout with title and params space
     print("55555555555555555555555555555555555555555555555")
     print(file_path)
-    directory=os.getcwd()
+    crrdirectory=os.getcwd()
+    print(os.listdir(crrdirectory))
     
     
-    print(os.listdir(directory))
+    directory="output"
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        print("output created")
+    
+    crrdirectory=os.getcwd()
+    print(os.listdir(crrdirectory))
+        
     # file_path="output//RandomForest_confusion_matrix.png"
     fig.savefig(file_path, dpi=300)  # Save the plot as an image with higher resolution
     print("66666666666666666666666666666666666666666666666")
