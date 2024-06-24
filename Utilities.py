@@ -120,6 +120,7 @@ def save_model_info(model_name, accuracy, model_params, classification_report, f
     - classification_report: Textual representation of the classification report.
     - file_path: File path where the text file will be saved.
     """
+    
     with open(file_path, 'w') as f:
         f.write(f"Model Name: {model_name}\n\n")
         f.write(f"Accuracy: {accuracy}\n\n")
@@ -129,6 +130,7 @@ def save_model_info(model_name, accuracy, model_params, classification_report, f
         f.write("\nClassification Report:\n")
         f.write(classification_report)
         f.write("="*55+"\n")
+    print("save_model_info done")
 
 # # Example usage:
 # model_name = "Decision Tree Classifier"

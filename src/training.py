@@ -87,7 +87,7 @@ class ModelTrainer:
         model_info_dump_path = self.params["output_dir"]
         path=os.path.join(model_info_dump_path,f"{self.model_name}_model_info.txt")
         save_model_info(self.model_name, self.test_accuracy, self.model_params,  self.classification_report, path)
-        
+        print(" model_info_dumped done ") 
         #dump model
         model_dump_path = self.params["model_dump_path"]
         path=os.path.join(model_dump_path,f"{self.model_name}_model.pkl")
