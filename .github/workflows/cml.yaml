@@ -24,6 +24,11 @@ jobs:
       
       - name: setup DVC 
         uses: iterative/setup-dvc@v1
+      - name: pull DVC 
+        env:
+           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        run: |
+          dvc pull
 
 
       - name: install requirements
