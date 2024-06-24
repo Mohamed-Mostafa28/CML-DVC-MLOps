@@ -48,8 +48,8 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
           ls
-          dvc pull
-
+          dvc pull data --run-cache
+          echo "done3"
       - name: run experiment
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
