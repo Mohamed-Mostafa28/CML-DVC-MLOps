@@ -165,5 +165,9 @@ def dump_model(model, file_path):
     - model: Trained machine learning model to be saved.
     - file_path: File path where the .pkl file will be saved.
     """
+    directory="models"
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        print("models created")
     with open(file_path, 'wb') as file:
         pickle.dump(model, file)
