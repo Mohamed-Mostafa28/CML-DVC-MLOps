@@ -28,7 +28,7 @@ jobs:
 
       - name: install requirements
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
           echo "requirement done"
 
