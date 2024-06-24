@@ -1,0 +1,22 @@
+row_data_dir: "data\\raw"
+row_data_name : "Algerian_forest_fires_dataset_UPDATE"
+source_data_path : "data\\raw"
+
+prepaired_data_path : "data\\processed"
+prepaired_data_name : "prepaired_data"
+
+test_size : 0.2
+random_state : 42
+model_name : "RandomForest"
+
+model_params :   
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 2
+  min_samples_leaf: 1
+  random_state: 42
+
+model_dump_path : "models"
+output_dir: "output"
+
+
