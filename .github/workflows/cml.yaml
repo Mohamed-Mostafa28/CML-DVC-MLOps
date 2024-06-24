@@ -58,7 +58,7 @@ jobs:
           echo "#####################################""
 
 
-        - name: run experiment2
+      - name: run experiment2
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |          
