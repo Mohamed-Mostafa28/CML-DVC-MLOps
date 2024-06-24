@@ -79,7 +79,7 @@ class ModelTrainer:
         print(path)
         print("===========================================")
         print("===========================================")
-        save_image(self.confusion_matrix, ['Class 0', 'Class 1'], self.model_name, self.model_params, path)
+        save_image(self.confusion_matrix, ['Class 0', 'Class 1'], self.model_name, self.model_params, "/"+path)
         print("===========================================")        
         print("===========================================")
         # save model info in text file
