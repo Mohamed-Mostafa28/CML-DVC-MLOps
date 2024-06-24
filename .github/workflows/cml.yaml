@@ -22,8 +22,8 @@ jobs:
       - name: setup CML 
         uses: iterative/setup-cml@v1
       
-      - name: setup DVC 
-        uses: iterative/setup-dvc@v1
+      # - name: setup DVC 
+      #   uses: iterative/setup-dvc@v1
 
 
 
@@ -39,6 +39,7 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         run: |
           dvc pull
+
       - name: run experiment
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,4 +66,3 @@ jobs:
 
           echo "CML report done"
           cml comment create report.md
-          
