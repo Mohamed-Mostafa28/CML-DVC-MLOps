@@ -74,8 +74,14 @@ class ModelTrainer:
         # save CM
         cm_dump_path = self.params["output_dir"]
         path=os.path.join(cm_dump_path,f"{self.model_name}_confusion_matrix.png")
+        print("===========================================")
+        print("===========================================")
+        print(path)
+        print("===========================================")
+        print("===========================================")
         save_image(self.confusion_matrix, ['Class 0', 'Class 1'], self.model_name, self.model_params, path)
-        
+        print("===========================================")        
+        print("===========================================")
         # save model info in text file
         model_info_dump_path = self.params["output_dir"]
         path=os.path.join(model_info_dump_path,f"{self.model_name}_model_info.txt")
