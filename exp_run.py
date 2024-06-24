@@ -16,6 +16,7 @@ def main():
         params = yaml.safe_load(file)
 
     DataPreprocessor(params)
+    print("********************************************************")
     ModelTrainer(params)
     print(sys.path)
 

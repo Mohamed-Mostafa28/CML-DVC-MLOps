@@ -30,6 +30,7 @@ class ModelTrainer:
         prepaired_data_path=self.params["prepaired_data_path"]
         prepaired_data_name=self.params["prepaired_data_name"]
         path=os.path.join(prepaired_data_path,prepaired_data_name)
+        print(path)
         self.prepaired_data=pd.read_csv(f"{path}.csv", usecols=lambda column: column != 'Unnamed: 0')
         print(" finshed read_prepaired_data ")
 
