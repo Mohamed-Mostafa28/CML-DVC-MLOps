@@ -4,65 +4,178 @@ permissions: write-all
 jobs:
   train-and-report:
     runs-on: ubuntu-latest
-
     steps:
+#-------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v3
-
+ #-------------------------------------     
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-
-      - name: setup python         
+#-------------------------------------
+      - name: Set up cml
+        uses: iterative/setup-cml@v1
+      - name: Set up dvc
+        uses: iterative/setup-dvc@v1
+#-------------------------------------
+      - name: Set up gdrive
+        run: |
+          pip install gdrive
+#-------------------------------------
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8' 
-
-      - name: setup CML 
-        uses: iterative/setup-cml@v1
-      
-      # - name: setup DVC 
-      #   uses: iterative/setup-dvc@v1
-
-
-
-      - name: install requirements
+          python-version: '3.8'
+#-------------------------------------
+      - name: Print current working directory
         run: |
-          pip install --upgrade pip
-          # python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          echo "requirement done"
-      
-      - name: pull DVC 
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          echo "Current working directory:"
+          pwd
+#-------------------------------------
+      - name: List all folders in data/processed
         run: |
-          dvc pull
 
-      - name: run experiment
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ls
-          python exp_run.py
-          echo "exp_run done"
-      
-      - name: Create report
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Create CML report
-          echo "Start Create CML report"
-          ls
-          cd ./output
+          echo "Folders in data/processed:"
           ls 
+#-------------------------------------
+      - name: Change directory to project root
+        run: |
+          cd ./src
+          echo "Folders in data/processed:"
+          ls 
+          echo "=======done-1======="
+#-------------------------------------
+      - name: Install dependencies
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+        run: |
+          python -m pip install --upgrade pip
+          echo "=======done0========"
+          pip install -r requirements.txt
+          echo "========done1========"
+          pip install dvc-gdrive
+          echo "========done2========"
+          
+      - name: pull dvc
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+        run: |        
+          dvc pull data --run-cache
+          # dvc pull
+          echo "done3"
+#-------------------------------------
+      # - name: run python script
+      #   env:
+      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     pwd
+      #     cd ./data
+      #     ls
+      #     cd ./processed
+      #     ls
+      #     cd ..
+      #     cd ..
+      #     ls
+      #     cd ./src
+      #     ls
+      #     python dataPreparing.py
+      #     python train.py  
+      #     echo "script done"
 
-          echo "## Metrics" > report.md  
-          cat RandomForest_model_info.txt >> report.md
+      # - name: creat report
+      #   env:
+      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      #   run: |
+      #     ls
+      #     cd ./out
+      #     ls  
+      #     echo "## Metrics" > report.md      
+      #     cat metrics.txt >> report.md
+      #     echo "Metrics done"
+      #     echo "## Confusion Matrix" >> report.md
+      #     echo '![](confusion_matrix.png "Confusion Matrix")' >> report.md
+      #     echo "image done"
+      #     cml comment create report.md
+#-------------------------------------
 
-          echo "## Confusion Matrix" >> report.md
-          echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
 
-          echo "CML report done"
-          cml comment create report.md
+
+
+
+
+
+
+
+
+
+
+# name: CML
+# on: [push]
+# permissions: write-all
+# jobs:
+#   train-and-report:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '16'
+
+#       - name: setup python         
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.8' 
+
+#       - name: setup CML 
+#         uses: iterative/setup-cml@v1
+      
+#       # - name: setup DVC 
+#       #   uses: iterative/setup-dvc@v1
+
+
+
+#       - name: install requirements
+#         run: |
+#           pip install --upgrade pip
+#           # python -m pip install --upgrade pip
+#           pip install -r requirements.txt
+#           echo "requirement done"
+      
+#       - name: pull DVC 
+#         env:
+#           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+#         run: |
+#           dvc pull
+
+#       - name: run experiment
+#         env:
+#           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           ls
+#           python exp_run.py
+#           echo "exp_run done"
+      
+#       - name: Create report
+#         env:
+#           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           # Create CML report
+#           echo "Start Create CML report"
+#           ls
+#           cd ./output
+#           ls 
+
+#           echo "## Metrics" > report.md  
+#           cat RandomForest_model_info.txt >> report.md
+
+#           echo "## Confusion Matrix" >> report.md
+#           echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
+
+#           echo "CML report done"
+#           cml comment create report.md
