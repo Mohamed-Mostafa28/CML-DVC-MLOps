@@ -24,11 +24,7 @@ jobs:
       
       - name: setup DVC 
         uses: iterative/setup-dvc@v1
-      - name: pull DVC 
-        env:
-           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-        run: |
-          dvc pull
+
 
 
       - name: install requirements
@@ -37,7 +33,11 @@ jobs:
           # python -m pip install --upgrade pip
           pip install -r requirements.txt
           echo "requirement done"
-
+      - name: pull DVC 
+        env:
+           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        run: |
+          dvc pull
       - name: run experiment
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
