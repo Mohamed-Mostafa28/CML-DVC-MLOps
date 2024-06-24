@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: '16'
 
-      - name: setup CML 
-        uses: iterative/setup-cml@v1
+      # - name: setup CML 
+      #   uses: iterative/setup-cml@v1
       
       
       - name: setup DVC 
@@ -33,13 +33,9 @@ jobs:
           python-version: '3.8' 
       
 
-
-
-
       - name: install requirements
         run: |
           pip install --upgrade pip
-          # python -m pip install --upgrade pip
           pip install -r requirements.txt
           echo "requirement done"
       
@@ -47,35 +43,38 @@ jobs:
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          ls
           dvc pull data --run-cache
           ls
-          echo "done3"
+          echo "pull done"
+
       - name: run experiment
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          
           ls
+          
           python exp_run.py
+
           echo "exp_run done"
       
-      - name: Create report
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Create CML report
-          echo "Start Create CML report"
-          ls
-          cd ./output
-          ls 
+      # - name: Create report
+      #   env:
+      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     # Create CML report
+      #     echo "Start Create CML report"
+      #     ls
+      #     cd ./output
+      #     ls 
 
-          echo "## Metrics" > report.md  
+      #     echo "## Metrics" > report.md  
 
-          cat RandomForest_model_info.txt >> report.md
+      #     cat RandomForest_model_info.txt >> report.md
 
-          echo "## Confusion Matrix" >> report.md
+      #     echo "## Confusion Matrix" >> report.md
 
-          echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
+      #     echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
 
-          echo "CML report done"
-          cml comment create report.md
+      #     echo "CML report done"
+      #     cml comment create report.md
