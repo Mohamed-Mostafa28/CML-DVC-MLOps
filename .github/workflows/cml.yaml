@@ -47,25 +47,35 @@ jobs:
           ls
           echo "pull done"
 
-      - name: run experiment1
+
+      - name: run experiment
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |        
           ls  
-          python exp1.py
-          echo "exp1 done"
-          echo "#####################################"
+          python exp_run.py
+          echo "experiment script done"
+          
+
+      # - name: run experiment1
+      #   env:
+      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |        
+      #     ls  
+      #     python exp1.py
+      #     echo "exp1 done"
+      #     echo "#####################################"
 
 
-      - name: run experiment2
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |          
-          ls
-          python exp2.py
-          echo "exp2 done"
-          ls
-          echo "#####################################"
+      # - name: run experiment2
+      #   env:
+      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |          
+      #     ls
+      #     python exp2.py
+      #     echo "exp2 done"
+      #     ls
+      #     echo "#####################################"
 
       - name: Create report
         env:

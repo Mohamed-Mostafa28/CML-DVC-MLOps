@@ -1,6 +1,6 @@
 import os
 import sys
-# sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 from Utilities import load_params 
 from training import ModelTrainer
 from preprocessing import DataPreprocessor
@@ -16,9 +16,8 @@ def main():
         params = yaml.safe_load(file)
 
     DataPreprocessor(params)
-    print("********************************************************")
     ModelTrainer(params)
-    # print(sys.path)
+    
 
 
 if __name__ == "__main__":
