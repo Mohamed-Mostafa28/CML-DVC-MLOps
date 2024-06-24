@@ -49,6 +49,7 @@ jobs:
         run: |
           ls
           dvc pull data --run-cache
+          ls
           echo "done3"
       - name: run experiment
         env:
@@ -69,9 +70,11 @@ jobs:
           ls 
 
           echo "## Metrics" > report.md  
+
           cat RandomForest_model_info.txt >> report.md
 
           echo "## Confusion Matrix" >> report.md
+
           echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
 
           echo "CML report done"
