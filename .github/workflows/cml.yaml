@@ -64,26 +64,26 @@ jobs:
           ls
           python exp2.py
           echo "exp2 done"
-          
-          echo "#####################################""
+          ls
+          echo "#####################################"
 
-      # - name: Create report
-      #   env:
-      #     REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     # Create CML report
-      #     echo "Start Create CML report"
-      #     ls
-      #     cd ./output
-      #     ls 
+      - name: Create report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create CML report
+          echo "Start Create CML report"
+          ls
+          cd ./output
+          ls 
 
-      #     echo "## Metrics" > report.md  
+          echo "## Metrics" > report.md  
 
-      #     cat RandomForest_model_info.txt >> report.md
+          cat RandomForest_model_info.txt >> report.md
 
-      #     echo "## Confusion Matrix" >> report.md
+          echo "## Confusion Matrix" >> report.md
 
-      #     echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
+          echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
 
-      #     echo "CML report done"
-      #     cml comment create report.md
+          echo "CML report done"
+          cml comment create report.md
