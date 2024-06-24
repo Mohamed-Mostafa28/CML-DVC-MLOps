@@ -77,23 +77,20 @@ class ModelTrainer:
     def dump_model(self):            
         # save CM
         cm_dump_path = self.params["output_dir"]
-        path=os.path.join(cm_dump_path,f"{self.model_name}_confusion_matrix.png",exist_ok=True)
-        print("===========================================")
+        path=os.path.join(cm_dump_path,f"{self.model_name}_confusion_matrix.png")
         print("===========================================")
         print(path)
         print("===========================================")
-        print("===========================================")
         save_image(self.confusion_matrix, ['Class 0', 'Class 1'], self.model_name, self.model_params,path)
         print("===========================================")        
-        print("===========================================")
         # save model info in text file
         model_info_dump_path = self.params["output_dir"]
-        path=os.path.join(model_info_dump_path,f"{self.model_name}_model_info.txt",exist_ok=True)
+        path=os.path.join(model_info_dump_path,f"{self.model_name}_model_info.txt")
         save_model_info(self.model_name, self.test_accuracy, self.model_params,  self.classification_report, path)
         
         #dump model
         model_dump_path = self.params["model_dump_path"]
-        path=os.path.join(model_dump_path,f"{self.model_name}_model.pkl",,exist_ok=True))
+        path=os.path.join(model_dump_path,f"{self.model_name}_model.pkl")
         dump_model(self.model, path)
         print(" finshed dump_model ")
     

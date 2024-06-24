@@ -74,7 +74,9 @@ def save_image(data, labels, model_name, model_params, file_path):
     ax.set_xlabel('Predicted label', fontsize=14, labelpad=20)  # Customize xlabel as needed
     ax.set_ylabel('True label', fontsize=14, labelpad=20)  # Customize ylabel as needed
     fig.tight_layout(rect=[0, 0.1, 1, 0.95])  # Adjust layout with title and params space
+    print("55555555555555555555555555555555555555555555555")
     fig.savefig(file_path, dpi=300)  # Save the plot as an image with higher resolution
+    print("55555555555555555555555555555555555555555555555")
     plt.close(fig)  # Close the plot to free up memory (important in loops or scripts)
 
 # Example usage:
