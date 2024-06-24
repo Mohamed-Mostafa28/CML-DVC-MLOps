@@ -64,7 +64,7 @@ jobs:
           ls
           python exp2.py
           echo "exp2 done"
-          ls
+          
           echo "#####################################""
 
       # - name: Create report
