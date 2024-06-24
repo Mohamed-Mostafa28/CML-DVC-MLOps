@@ -32,25 +32,14 @@ jobs:
           pip install -r requirements.txt
           echo "requirement done"
 
-      - name: preparing data
+      - name: run experiment
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ls
-          cd ./src
-          ls
-          python dataPreparing.py
-          echo "data preparing done"
+          python exp_run.py
+          echo "exp_run done"
       
-      - name: Train model
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ls
-          cd ./src
-          ls                
-          python train.py 
-          echo "train done"
       - name: Create report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -58,14 +47,14 @@ jobs:
           # Create CML report
           echo "Start Create CML report"
           ls
-          cd ./out
+          cd ./output
           ls 
 
           echo "## Metrics" > report.md  
-          cat metrics.txt >> report.md
+          cat RandomForest_model_info.txt >> report.md
 
           echo "## Confusion Matrix" >> report.md
-          echo '![](confusion_matrix.png "Confusion Matrix")' >> report.md
+          echo '![](RandomForest_confusion_matrix.png "Confusion Matrix")' >> report.md
 
           echo "CML report done"
           cml comment create report.md
