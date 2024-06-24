@@ -54,8 +54,7 @@ jobs:
           ls  
           python exp1.py
           echo "exp1 done"
-          
-          echo "#####################################""
+          echo "#####################################"
 
 
       - name: run experiment2
