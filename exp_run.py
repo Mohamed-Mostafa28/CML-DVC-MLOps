@@ -18,7 +18,7 @@ def main():
     DataPreprocessor(params)
     print("********************************************************")
     ModelTrainer(params)
-    print(sys.path)
+    # print(sys.path)
 
 
 if __name__ == "__main__":
