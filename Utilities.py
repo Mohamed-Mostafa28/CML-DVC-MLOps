@@ -78,8 +78,9 @@ def save_image(data, labels, model_name, model_params, file_path):
     print(file_path)
     p=os.getcwd()
     print(p)
+    file_path="output//RandomForest_confusion_matrix.png"
     fig.savefig(file_path, dpi=300)  # Save the plot as an image with higher resolution
-    print("55555555555555555555555555555555555555555555555")
+    print("66666666666666666666666666666666666666666666666")
     plt.close(fig)  # Close the plot to free up memory (important in loops or scripts)
 
 # Example usage:
