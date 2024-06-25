@@ -1,14 +1,14 @@
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+# sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 from Utilities import load_params 
-from training import ModelTrainer
-from preprocessing import DataPreprocessor
+from src.training import ModelTrainer
+from src.preprocessing import DataPreprocessor
 import yaml
 
-
-
-
+print("-----------------------------")
+print(sys.path)
+print("-----------------------------")
 
 def main():
 
