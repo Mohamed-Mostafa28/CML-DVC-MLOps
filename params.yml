@@ -1,8 +1,8 @@
-row_data_dir: "data//raw"
+row_data_dir: "data/raw"
 row_data_name : "Algerian_forest_fires_dataset_UPDATE"
-source_data_path : "data//raw"
+source_data_path : "data/raw"
 
-prepaired_data_path : "data//processed"
+prepaired_data_path : "data/processed"
 prepaired_data_name : "prepaired_data"
 
 test_size : 0.2
