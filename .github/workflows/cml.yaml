@@ -53,6 +53,12 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |        
           ls  
+          cd /src
+          ls
+          pip install .
+          cd ..
+          ls
+          # python .src/exp_run.py
           python .src/exp_run.py
           echo "experiment script done"
           
