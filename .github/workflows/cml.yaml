@@ -45,9 +45,9 @@ jobs:
         run: |
           ls 
           echo "--------------------"
-          ls ./data/processed
-          echo "--------------------"
-          ls ./data/row
+          # ls ./data/processed
+          # echo "--------------------"
+          # ls ./data/row
           echo "--------------------"
           dvc pull data --run-cache
           ls
