@@ -62,7 +62,7 @@ jobs:
           cd ..
           echo "outing"
           ls
-          python .src/deplib/run/exp_run.py
+          python ./src/deplib/run/exp_run.py
           echo "experiment script done"
           
 
