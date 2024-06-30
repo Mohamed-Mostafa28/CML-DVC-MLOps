@@ -17,7 +17,7 @@ stages:
     cmd: python src/deplib/components/training.py
     deps:
       - src/deplib/components/training.py
-      - params.yaml
+      # - params.yaml
       - data/processed/prepaired_data.csv
     outs:
       - output\RandomForest_confusion_matrix.png
