@@ -1,5 +1,7 @@
 import pandas as pd
-from deplib.uttiles.Utilities import dump_model, save_image, save_model_info
+from deplib.uttiles.Utilities import dump_model
+from deplib.uttiles.Utilities import save_image
+from deplib.uttiles.Utilities import save_model_info
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
