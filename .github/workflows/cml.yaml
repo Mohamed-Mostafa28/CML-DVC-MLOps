@@ -54,7 +54,7 @@ jobs:
         run: |        
           ls  
           echo "from outer to src"
-          cd /src
+          cd ./src
           echo "from inner to src"
           ls
           echo "will install lib"
