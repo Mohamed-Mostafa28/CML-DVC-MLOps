@@ -5,8 +5,6 @@ import sys
 from deplib.components.preprocessing import DataPreprocessor
 from deplib.components.training import ModelTrainer
 
-# from deplib.uttiles import Utilities 
-
 # from deplib.components.training import ModelTrainer
 # from deplib.components.preprocessing import DataPreprocessor
 import yaml
