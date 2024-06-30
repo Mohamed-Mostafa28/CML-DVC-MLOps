@@ -2,8 +2,9 @@ stages:
   run_prepare:
     cmd: python src/deplib/components/preprocessing.py
     deps:
-      - params.yaml
+
       - src/deplib/components/preprocessing.py
+
       - data/raw/Algerian_forest_fires_dataset_UPDATE.csv
     outs:
       - data/processed/prepaired_data.csv
