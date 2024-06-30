@@ -25,6 +25,7 @@ def main():
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     ModelTrainer(params)
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
 
 
