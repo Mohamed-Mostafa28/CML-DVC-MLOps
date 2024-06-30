@@ -49,16 +49,16 @@ jobs:
           echo "--------------------"
           ls 
           echo "--------------------"
-          cd ./data/processed
+          cd ./data
           ls
-          cd ../..
+          cd ..
           echo "--------------------"
           cd ./data/row
           ls
-          cd ../..
+          cd ..
           echo "--------------------"
 
-          dvc pull # data --run-cache
+          dvc pull data --run-cache
           ls
           echo "pull done"
 
