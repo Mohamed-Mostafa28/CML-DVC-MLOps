@@ -8,7 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score,confusion_matrix,classification_report
 import os
-print("ggggggggggggggggggggggg")
+
 
 print("zzzzzzzzzzxxxxxzzzzzzzzzzz")
 class ModelTrainer:

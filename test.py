@@ -1,3 +1,0 @@
-import deplib
-
-print("xxxxxxxxxxxx")
