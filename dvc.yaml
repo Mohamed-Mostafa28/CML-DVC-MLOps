@@ -9,6 +9,7 @@ stages:
       - data/processed/prepaired_data.csv
 
 
+
   run_training:
     cmd: python src/deplib/components/training.py
     deps:

@@ -1,4 +1,4 @@
-/output
-/models
+# /output
+# /models
 /__pycache__
 src/__pycache__
