@@ -43,6 +43,9 @@ jobs:
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
+          ls 
+          ls /data/processed
+          ls /data/row
           dvc pull data --run-cache
           ls
           echo "pull done"
