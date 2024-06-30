@@ -8,6 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score,confusion_matrix,classification_report
 import os
+import yaml
 
 
 print("zzzzzzzzzzxxxxxzzzzzzzzzzz")
@@ -100,15 +101,6 @@ class ModelTrainer:
     
     
     
-import os
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-from deplib.uttiles.Utilities import load_params 
-from training import ModelTrainer
-from preprocessing import DataPreprocessor
-import yaml
-
-
 
 
 

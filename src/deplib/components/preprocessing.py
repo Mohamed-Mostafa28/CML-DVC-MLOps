@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import yaml
 
 
 class DataPreprocessor:
@@ -55,13 +56,7 @@ class DataPreprocessor:
 
 
 
-import os
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-from deplib.uttiles.Utilities import load_params 
-from training import ModelTrainer
-from preprocessing import DataPreprocessor
-import yaml
+
 
 
 def main():

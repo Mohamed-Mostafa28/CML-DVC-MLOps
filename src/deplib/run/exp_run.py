@@ -1,36 +1,26 @@
-import os
-import sys
-# sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+import deplib.components.preprocessing  # DataPreprocessor
+import deplib.components.training  #ModelTrainer
 
-from deplib.components.preprocessing import DataPreprocessor
-from deplib.components.training import ModelTrainer
 
-# from deplib.components.training import ModelTrainer
-# from deplib.components.preprocessing import DataPreprocessor
-import yaml
-
-print("-----------------------------")
-# print(sys.path)
-print("-----------------------------")
-
-def main():
+# import yaml
+# import os
+# import sys
+# def main():
  
-    print("ttttttttttttttttttttttttttttt")
-    print(os.getcwd())
-    path=r"params.yml"
-    with open(path, 'r', encoding="utf-8") as file:
-        
-#   with open(r"../../../../params.yml", 'r', encoding="utf-8") as file:
-        params = yaml.safe_load(file)
-    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    DataPreprocessor(params)
-    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    ModelTrainer(params)
-    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+#     print("ttttttttttttttttttttttttttttt")
+#     print(os.getcwd())
+#     path=r"params.yml"
+#     with open(path, 'r', encoding="utf-8") as file:
+#         params = yaml.safe_load(file)
+#     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+#     DataPreprocessor(params)
+#     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+#     ModelTrainer(params)
+#     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+#     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
