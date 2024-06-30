@@ -58,7 +58,7 @@ jobs:
           cd ..
           echo "--------------------"
 
-          dvc pull data --run-cache
+          dvc pull data #--run-cache
           ls
           echo "pull done"
 
