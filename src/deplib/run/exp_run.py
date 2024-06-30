@@ -20,11 +20,11 @@ def main():
 
     with open(r"../../../params.yml", 'r', encoding="utf-8") as file:
         params = yaml.safe_load(file)
-
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     DataPreprocessor(params)
-    
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     ModelTrainer(params)
-    
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     
 
 
