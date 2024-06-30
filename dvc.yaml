@@ -6,6 +6,8 @@ stages:
       - src/deplib/components/preprocessing.py
 
       - data/raw/Algerian_forest_fires_dataset_UPDATE.csv
+
+      # - params.yaml
     outs:
       - data/processed/prepaired_data.csv
 
