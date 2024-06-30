@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score,confusion_matrix,classification_repor
 import os
 print("ggggggggggggggggggggggg")
 
-print("zzzzzzzzzzzzzzzzzzzzz")
+print("zzzzzzzzzzxxxxxzzzzzzzzzzz")
 class ModelTrainer:
     
     def __init__(self,params):
