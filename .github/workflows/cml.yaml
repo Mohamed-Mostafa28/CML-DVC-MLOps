@@ -47,9 +47,13 @@ jobs:
           mkdir -p ./data/processed
           mkdir -p ./data/row
           echo "--------------------"
-          ls ./data/processed
+          cd ./data/processed
+          ls
+          cd ../..
           echo "--------------------"
-          ls ./data/row
+          cd ./data/row
+          ls
+          cd ../..
           echo "--------------------"
 
           dvc pull # data --run-cache
