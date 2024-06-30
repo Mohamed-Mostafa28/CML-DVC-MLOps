@@ -1,4 +1,5 @@
 import pandas as pd
+from deplib.uttiles.Utilities import dump_model, save_image, save_model_info
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -6,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score,confusion_matrix,classification_report
 import os
 print("ggggggggggggggggggggggg")
-from deplib.uttiles.Utilities import dump_model, save_image, save_model_info
+
 print("zzzzzzzzzzzzzzzzzzzzz")
 class ModelTrainer:
     
