@@ -53,10 +53,14 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |        
           ls  
+          echo "from outer to src"
           cd /src
+          echo "from inner to src"
           ls
+          echo "will install lib"
           pip install .
           cd ..
+          echo "outing"
           ls
           # python .src/exp_run.py
           python .src/exp_run.py
