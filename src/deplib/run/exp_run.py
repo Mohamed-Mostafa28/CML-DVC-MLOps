@@ -15,7 +15,7 @@ print("-----------------------------")
 
 def main():
  
-    print("tttttttttttttttttttttttttttttttttttttt")
+    print("ttttttttttttttttttttttttttttt")
     with open(f"../../../params.yml", 'r', encoding="utf-8") as file:
     # with open(r"../../../../params.yml", 'r', encoding="utf-8") as file:
         params = yaml.safe_load(file)
