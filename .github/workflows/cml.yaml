@@ -47,6 +47,8 @@ jobs:
           mkdir -p ./data/processed
           mkdir -p ./data/row
           echo "--------------------"
+          ls 
+          echo "--------------------"
           cd ./data/processed
           ls
           cd ../..
